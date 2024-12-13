@@ -6,8 +6,15 @@
     <title>Unity WebGL Player | googleLogin</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script> 
+    <script> function onUnityLoaded() 
+    { 
+      GoogleLoginInit(); 
+
+    } </script>
   </head>
-  <body>
+  <body onload="onUnityLoaded()">
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
@@ -59,9 +66,9 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/logintest.loader.js";
       var config = {
-        dataUrl: buildUrl + "/logintest.data.br",
-        frameworkUrl: buildUrl + "/logintest.framework.js.br",
-        codeUrl: buildUrl + "/logintest.wasm.br",
+        dataUrl: buildUrl + "/logintest.data",
+        frameworkUrl: buildUrl + "/logintest.framework.js",
+        codeUrl: buildUrl + "/logintest.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "googleLogin",
